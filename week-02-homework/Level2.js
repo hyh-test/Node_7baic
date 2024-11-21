@@ -8,10 +8,9 @@ const objArray = [
 function myForEach(arr, callback) {
     // myForEach 구현
     for (let i = 0; i < arr.length; i++) {
-        callback(arr[i]);
+        callback(arr[i])
     }
 }
-
 /**
 { name: 'apple', price: 100 }
 { name: 'banana', price: 200 }
