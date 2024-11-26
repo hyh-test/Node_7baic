@@ -40,8 +40,8 @@ function myIncludes(arr, value) {
     }
 }
 const includes1 = arr2.includes(3); // true
-const includes2 = myIncludes(arr, 3); // true
-const includes3 = myIncludes(arr, 6); // true
+const includes2 = myIncludes(arr2, 3); // true
+const includes3 = myIncludes(arr2, 6);// false
 console.log(`include : ${includes1 === includes2}`); // true
 console.log(`include : ${includes1 === includes3}`); // false
 
