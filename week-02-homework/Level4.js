@@ -4,37 +4,38 @@ const objArray = [
     { name: 'grape', price: 300 },
 ]
 
-// myFilter 를 구현하여 arr.filter 와 동일한 값이 나오도록 하기.
 function myFilter(arr, callback) {
+    let result = [];
+
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i].price >= 200) {
-            callback(arr[i])
+        if (callback(arr[i], i, arr)) {
+            result.push(arr[i]); 
         }
     }
-    // myFilter 구현
+
+    return result; 
 }
-myFilter(objArray, function (obj) {
-    console.log(obj);
+
+const result1 = myFilter(objArray, function(obj) {
+    return obj.price >= 200;  // price가 200 이상인 요소들만 필터링
 });
+console.log(result1)
 
 
 
-// myMap를 구현하여 arr.map과 동일한 값이 나오도록 하기.
 function myMap(arr, callback) {
-    let array = []
+    let Array = []; 
     for (let i = 0; i < arr.length; i++) {
-        array.push(arr[i].price)
+        Array.push(callback(arr[i]));  
     }
-    callback(array)
+    return Array; 
 }
 
-myMap(objArray, function (obj) {
-    console.log(obj);
+const result = myMap(objArray, function(obj) {
+    return obj.price; 
 });
 
-
-
-
+console.log(result);
 
 const arr = [1, 2, 3, 4, 5];
 
